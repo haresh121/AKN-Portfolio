@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ the_title }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <!-- We can also insert any logo here     -->
+        <div class="logo">
+            <a href="#">
+                Anil Nelakanti
+            </a>
+        </div>
+
+        <!--  checkbox to control the icon's state    -->
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+        </label>
+        <!--  main menu    -->
+        <ul class="menu">
+            <li><a href="#"> Home </a></li>
+            <li><a href="#"> Publications </a></li>
+            <li><a href="#"> Projects </a></li>
+            <li><a href="#footer"> Contact Me </a></li>
+        </ul>
+    </nav>
+
+
+
+    <div id="container">
+
+        <div class="header" id="hero">
+            <div class="image-head">
+                <img src="https://images.pexels.com/photos/4367584/pexels-photo-4367584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="" class="bg">
+
+                <img src="{{ url_for('static', filename='images/Anil.png') }}" alt="" class="fg">
+
+                <div id="sites">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="bi bi-mortarboard"></i> Google Scholar</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jinja2 directives: page contents will go between them -->
+        <div id="base-content">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div id="left">
+            <h2>Anil Nelakanti</h2>
+            <p>Computer Science Researcher based in India</p>
+            <div id="sites">
+                <ul>
+                    <li>
+                        <a href="#"> Google Scholar</a>
+                    </li>
+                    <li>
+                        <a href="#">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="#"> Twitter</a>
+                    </li>
+                </ul>
+            </div>
+            <span>2023 | Anil Kumar N</span>
+        </div>
+        <hr>
+        <div id="right">
+            <p>Contact Me</p>
+            <h4>Have a Cool Project or Wanna Colloborate</h4>
+            <div id="email-entry">
+                <input type="email" class="email-field" placeholder="Your e-mail address">
+                <button onclick="sendEmail()">Send Email</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="{{ url_for('static', filename='js/base.js') }}"></script>
+
+</html>
